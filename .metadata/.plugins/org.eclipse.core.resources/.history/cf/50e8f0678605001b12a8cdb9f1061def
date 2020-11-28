@@ -1,0 +1,27 @@
+
+public class User {
+
+	private String id;
+	private String name;
+	 
+	public User(String id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	public void addCommentToPost(Post p, Comment c1) {
+	
+		p.setComments(c1);
+		
+	}
+
+	public void replyToComment(Post p, Comment c1, Comment c11) {
+		
+		p.setThreadComments(c1,c11);
+	}
+	
+
+	
+	
+}

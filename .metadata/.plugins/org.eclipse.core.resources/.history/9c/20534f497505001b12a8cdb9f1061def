@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Catalog {
+
+	private List<Book> books;
+	private Map<String,List<Book>> AuthorMap;
+	private Map<Integer,List<Book>> categoryMap;
+	
+	
+	public Catalog() {
+		AuthorMap = new HashMap<>();
+	}
+	
+	public void addBooks(List<Book> books) {
+		this.books = books;
+		
+		for(Book book :books)
+		{
+			if(AuthorMap.containsKey(book.getAuthor()))
+				AuthorMap.get(book.getAuthor()).add(book);
+			else
+			{
+				AuthorMap.put(book.getAuthor(),new ArrayList<>());
+				AuthorMap.get(book.getAuthor()).add(book);
+			}
+		}
+	}
+
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+
+	public Book getBookById(int id) {
+		for(Book book: books)
+			if(book.getId()==id)
+				return book;
+		return null;
+	}
+
+	public List<Book> getBookByAuthor(String authorName) {
+	
+		if(AuthorMap.containsKey(authorName))
+			return AuthorMap.get(authorName);
+		return null;
+	}
+
+	public Book getBookByName(String bookName) {
+		for(Book book: books)
+			if(book.getName()==bookName)
+				return book;
+		return null;
+	}
+
+	public List<Book> getBookByCategory(int category) {
+		if(categoryMap.containsKey(category))
+			return categoryMap.get(category);
+		return null;
+		
+	}
+
+
+	
+	
+	
+}

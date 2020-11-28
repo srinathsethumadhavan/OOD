@@ -1,0 +1,30 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		boolean flag =isPalindrome("");
+		if(flag)
+			System.out.println("String is palindrome");
+		else
+			System.out.println("String is not palindrome");
+			
+
+	}
+
+	public static  boolean isPalindrome(String str) {
+		int i = 0;
+		int j = str.length()-1;
+		if(str.length()==0)
+			return true;
+		while(i<j) {
+			if(str.charAt(i)!=str.charAt(j))
+			{
+				return false;
+			}
+			i++;
+			j--;
+		}
+		return true;
+	}
+}

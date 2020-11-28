@@ -1,0 +1,52 @@
+
+public class Main {
+
+	public static void main(String[] arg) {
+		
+		
+		User u1 = new User("u1","user1");
+		User u2 = new User("u2","user2");
+		User u3 = new User("u3","user3");
+		User u4 = new User("u4","user4");
+		User u5 = new User("u5","user5");
+		User u6 = new User("u6","user6");
+		
+		Post p= new Post("p1");
+		
+		Comment c1 = new Comment("c1","Comment1");
+		Comment c2= new Comment("c2","Comment2");
+		Comment c21= new Comment("c21","Comment21");
+		Comment c11= new Comment("c11","Comment11");
+		Comment c12= new Comment("u12","Comment12");
+		Comment c13= new Comment("u13","Comment13");
+
+		
+		u1.addCommentToPost(p, c1);
+		u2.addCommentToPost(p, c2);
+		
+		u3.replyToComment(p,c1, c11);
+		u4.replyToComment(p,c1, c12);
+		u5.replyToComment(p,c1, c13);
+		u6.replyToComment(p,c2, c21);
+
+		
+//		for(Comment c : p.getComments()) {
+//			System.out.println(c.toString());
+//			for(Comment tc : p.getThreadedComments(c) )
+//				System.out.println("\t"+tc.toString());
+//		}
+		
+		
+		u1.deleteComment(p,c1);
+		u1.editComment(p,c2,"Comment2 edited");
+		u1.editComment(p,c21,"Comment21 edited");
+		
+		for(Comment c : p.getComments()) {
+			System.out.println(c.toString());
+			if(c!=null)
+			for(Comment tc : p.getThreadedComments(c) )
+				System.out.println("\t"+tc.toString());
+		}
+		u1.deleteComment(p,c2,c21);
+	}
+}

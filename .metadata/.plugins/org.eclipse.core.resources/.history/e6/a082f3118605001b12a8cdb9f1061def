@@ -1,0 +1,57 @@
+
+public class Comment {
+
+	private String id;
+	private String postId;
+	private String commentId;
+	private String parentId;
+	private String description;
+	
+	
+	public Comment(String id,String description) {
+		super();
+		this.commentId= id;
+		this.description = description;
+	}
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPostId() {
+		return postId;
+	}
+	public void setPostId(String postId) {
+		this.postId = postId;
+	}
+	public String getCommentId() {
+		return commentId;
+	}
+	public void setCommentId(String commentId) {
+		this.commentId = commentId;
+	}
+	public String getParentId() {
+		return parentId;
+	}
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Comment [id=" + id + ", postId=" + postId + ", commentId=" + commentId + ", parentId=" + parentId
+				+ ", description=" + description + "]";
+	}
+	
+	
+}

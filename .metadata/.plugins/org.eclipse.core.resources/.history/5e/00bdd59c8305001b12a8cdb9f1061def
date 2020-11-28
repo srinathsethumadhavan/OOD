@@ -1,0 +1,33 @@
+
+public class Main {
+
+	public static void main(String[] arg) {
+		
+		
+		User u1 = new User("user1");
+		User u2 = new User("user2");
+		User u3 = new User("user3");
+		User u4 = new User("user4");
+		User u5 = new User("user5");
+		User u6 = new User("user6");
+		
+		Post p= new Post;
+		
+		Comment c1 = new Comment("Comment1");
+		Comment c2= new Comment("Comment2");
+		Comment c21= new Comment("Comment21");
+		Comment c11= new Comment("Comment11");
+		Comment c12= new Comment("Comment12");
+		Comment c13= new Comment("Comment13");
+
+		
+		u1.addCommentToPost(p, c1);
+		u2.addCommentToPost(p, c2);
+		
+		u3.replyToComment(p,c1, c11);
+		u4.replyToComment(p,c1, c12);
+		u5.replyToComment(p,c2, c13);
+		u6.replyToComment(p,c2, c21);
+
+	}
+}

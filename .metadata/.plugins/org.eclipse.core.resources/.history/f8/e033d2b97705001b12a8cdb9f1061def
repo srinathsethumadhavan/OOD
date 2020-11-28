@@ -1,0 +1,7 @@
+
+public class MyComparator {
+
+	public int compare(Book b1,Book b2) {
+		return ;
+	}
+}

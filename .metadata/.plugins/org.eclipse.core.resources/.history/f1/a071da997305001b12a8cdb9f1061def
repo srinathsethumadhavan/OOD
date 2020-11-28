@@ -1,0 +1,30 @@
+import java.util.List;
+
+public class Catalog {
+
+	private List<Book> books;
+
+	
+	public void addBooks(List<Book> books) {
+		this.books = books;
+		
+	}
+
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+
+	public Book getBookById(int id) {
+		for(Book book: books)
+			if(book.getId()==id)
+				return book;
+		return null;
+	}
+
+
+	
+	
+	
+}

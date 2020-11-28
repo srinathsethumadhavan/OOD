@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+//		boolean flag =isPalindrome("      ");
+//		if(flag)
+//			System.out.println("String is palindrome");
+//		else
+//			System.out.println("String is not palindrome");
+			
+		 findCarNames("Alto:Blue,Maroon;i10:Blue,Silver,Orange;Santro:Green,Orange","Green");
+		
+		
+	}
+
+		public static  boolean isPalindrome(String str) {
+		int i = 0;
+		int j = str.length()-1;
+		if(str.length()==0)
+			return true;
+		while(i<j) {
+			if(str.charAt(i)!=str.charAt(j))
+			{
+				return false;
+			}
+			i++;
+			j--;
+		}
+		return true;
+	}
+		
+			
+		
+		
+		/*
+		 * "Alto:
+		 * Blue,Maroon;
+		 * 
+		 * i10:
+		 * Blue,Silver,Orange;
+		 * 
+		 * Santro:
+		 * Green,Orange;..."
+		 */
+		
+		
+		public static void findCarNames(String str,String requiredColor) {
+			
+			Map<String,List<String>> map = new HashMap<>();
+			String[] carColorPairs = str.split(";");
+			
+			for(String pair :carColorPairs ) {
+				String[] temp = pair.split(":");
+				String[] colors = temp[1].split(",");
+				for(String color : colors)
+				{
+					if(map.containsKey(color))
+						map.get(color).add(temp[0]);
+					else
+					{
+						map.put(color,new ArrayList<String>());
+						map.get(color).add(temp[0]);
+					}
+					
+				}
+			}
+			
+			
+			if(map.containsKey(requiredColor))
+				System.out.println(map.get(requiredColor));
+			
+		}
+}
